@@ -1,0 +1,32 @@
+
+{% extends "index.html" %}
+
+{% block title %}>instructors list{% endblock title %}
+
+
+{% block content %}
+
+<h1>  Spaghetti code academy</h1>
+<h6>  Научитесь создавать и программировать современные веб-интерфейсы, <br>
+  использую много операторов GOTO (особенно переходов назад), исключений и <br>
+  других конструкций, ухудшающих структурированность.</h6>
+  <hr>
+<h3>Выбирай на каком курсе хочешь учиться!</h3>
+
+
+<br>
+
+
+  <table class="table-hover table-bordered">
+
+    {% for course in courses %}
+    <tr>
+      <th> <a href="{% url 'course_url' id=course.id %}"> {{course.name}} </a> </th>
+      <th> {{course.short_description}} </th>
+    </tr>
+    {% endfor %}
+
+  </table>
+
+
+{% endblock %}

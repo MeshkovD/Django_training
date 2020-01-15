@@ -1,0 +1,14 @@
+
+
+{% extends "index.html" %}
+{% block title %}>instructors list{% endblock title %}
+{% block header %}Главная{% endblock header %}
+
+{% block content %}
+
+<h1>instructors list</h1>
+{%for instructor in instructors%}
+  <p>{{instructor.name}} {{instructor.surname}}</p>
+{% endfor %}
+
+{% endblock %}

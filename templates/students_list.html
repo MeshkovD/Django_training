@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block title %}Студенты{% endblock title %}
+
+{% block content %}
+<h1>Список студентов</h1>
+<p><font size="5">{{ course.description }}</font></p>
+<hr>
+
+<table class="table-hover table-bordered">
+        <tr>
+            <th>фамилия имя</th>
+            <th>адрес</th>
+            <th>skype</th>
+            <th>курсы</th>
+        </tr>
+    {% for student in students %}
+        <tr align=left>
+            <th>{{ student.surname }} {{ student.name }}</th>
+            <th>{{ student.addres }}</th>
+            <th>{{ student.skype }}</th>
+            <th>
+                {% for course in student.courses.all %}
+                    <li> {{ course.name }} </li>
+                {% endfor %}
+            </th>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
