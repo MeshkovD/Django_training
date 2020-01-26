@@ -5,7 +5,7 @@ from django.shortcuts import render
 from instructors.views import hello, hello_python, sum_two, http, instructors_list
 from Courses.views import course
 from django.urls import include
-from students.views import students_list
+from students.views import students_list, student
 
 
 def results(request, a, b, c):
@@ -31,4 +31,5 @@ urlpatterns = [
     # path('results/(\d+)/', include('quadratic.urls')),
     re_path('results/a=(?P<a>\w+)&b=(?P<b>\w+)&c=(?P<c>\w+)/', results),
     path('students/', students_list, name='students_list'),
+    path('student/<int:id>/', student, name='student'),
 ]
