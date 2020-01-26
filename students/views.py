@@ -5,3 +5,7 @@ from students.models import Student
 def students_list(request):
     students = Student.objects.all()
     return render(request, 'students_list.html', {"students": students})
+
+def student(request, id):
+    student = Student.objects.get(id__iexact=id)
+    return render(request, 'student.html', context={"student":student})

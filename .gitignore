@@ -3,6 +3,8 @@
 __pycache__
 myvenv
 Scripts
+/Scripts
 db.sqlite3
 /static
+static
 .DS_Store
