@@ -16,7 +16,7 @@
         </tr>
     {% for student in students %}
         <tr align=left>
-            <th>{{ student.surname }} {{ student.name }}</th>
+            <th><a href="{% url 'student' id=student.id %}">{{ student.surname }} {{ student.name }}</a></th>
             <th>{{ student.addres }}</th>
             <th>{{ student.skype }}</th>
             <th>
