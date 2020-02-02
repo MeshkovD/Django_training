@@ -16,12 +16,12 @@
         </tr>
     {% for student in students %}
         <tr align=left>
-            <th><a href="{% url 'student' id=student.id %}">{{ student.surname }} {{ student.name }}</a></th>
-            <th>{{ student.addres }}</th>
-            <th>{{ student.skype }}</th>
+            <th><a href="{% url 'student' id=student.id %}"> {{ student.surname }} {{ student.name }} </a></th>
+            <th> {{ student.addres }} </th>
+            <th> {{ student.skype }} </th>
             <th>
                 {% for course in student.courses.all %}
-                    <li> {{ course.name }} </li>
+                    <li><a href="{% url 'course_url' id=course.id %}"> {{ course.name }} </a></li>
                 {% endfor %}
             </th>
         </tr>

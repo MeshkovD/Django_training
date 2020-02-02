@@ -12,6 +12,22 @@
             <th>фамилия имя</th>
             <th>{{ student.surname }} {{ student.name }}</th>
         </tr>
+
+        <tr align=left>
+            <th>дата рождения</th>
+            <th>{{ student.date_of_birth }}</th>
+        </tr>
+
+        <tr align=left>
+            <th>email</th>
+            <th>{{ student.email }}</th>
+        </tr>
+
+        <tr align=left>
+            <th>телефон</th>
+            <th>{{ student.phone }}</th>
+        </tr>
+
         <tr align=left>
             <th>адрес</th>
             <th>{{ student.addres }}</th>
@@ -27,7 +43,7 @@
 
             <th>
                 {% for course in student.courses.all %}
-                    <li>{{ course }}</li>
+                    <li><a href='{% url 'course_url' id=course.id %}'>{{ course.name }}</a></li>
                 {% endfor %}
             </th>
 
