@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block title %} {{ course.name }} {% endblock title %}
+
+{% block content %}
+
+
+<h1>{{ course.name }}</h1>
+<p><font size="5">{{ course.description }}</font></p>
+<hr>
+<h2 class="">План курса</h2>
+
+<table class="table-hover table-bordered">
+    {% for lesson in course.lesson_set.all %}
+        <tr align=left>
+            <th>{{ lesson.subject }}</th>
+            <th>{{ lesson.description }}</th>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
